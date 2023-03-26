@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background-color: #CCCCCC;
+            width: 500px;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(249, 247, 247);
+        }
+
+        .input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .count {
+            display: flex;
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <h1>Counter App</h1>
+            <div class="count">
+                <button class="min">Decryment by 1</button>
+                <input type="text" class="input" value="0">
+                <button class="max">Decryment by 1</button>
+            </div>
+            <button class="reset">Reset Value</button>
+        </div>
+    </main>
+
+    <script>
+        let value = 0;
+
+        const addValue = () => {
+            value = value + 1;
+            text.value = value;
+
+        }
+        const minValue = () => {
+            if (value > 0) value = value - 1;
+            text.value = value;
+
+        }
+        let max = document.querySelector('.max').addEventListener('click', addValue);
+        let mix = document.querySelector('.min').addEventListener('click', minValue);
+
+        document.querySelector('.reset').addEventListener('click', () => {
+            text.value = 0;
+            value = 0;
+        })
+
+        let text = document.querySelector(".input");
+    </script>
+</body>
+
+</html>
